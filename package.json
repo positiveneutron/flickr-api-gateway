@@ -1,0 +1,24 @@
+{
+  "name": "flickr-api-gateway",
+  "version": "1.0.0",
+  "description": "This is API Gateway to consume Flickr API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/positiveneutron/flickr-api-gateway.git"
+  },
+  "author": "Ilham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/positiveneutron/flickr-api-gateway/issues"
+  },
+  "homepage": "https://github.com/positiveneutron/flickr-api-gateway#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "https": "^1.0.0"
+  }
+}
