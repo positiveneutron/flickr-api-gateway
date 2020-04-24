@@ -1,19 +1,17 @@
 const express = require("express");
-const dotEnv = require("dotenv");
+
 const router = express.Router();
 
 const adapter = require("../adapters/apiAdapter");
-// environment configuration and caller
-dotEnv.config();
-const { BASE_URL } = process.env;
 
-const api = adapter(BASE_URL);
+const api = adapter();
 
 router.get("/public_image", (req, res) => {
   return api
     .get("/", {
       params: {
         format: "json",
+        lang: "en-us",
       },
     })
     .then((resp) => {

@@ -1,3 +1,8 @@
 const axios = require("axios");
+const dotEnv = require("dotenv");
 
-module.exports = (baseURL) => axios.create({ baseURL: baseURL });
+// environment configuration and caller
+dotEnv.config();
+const { BASE_URL } = process.env;
+
+module.exports = () => axios.create({ baseURL: BASE_URL });
