@@ -19,4 +19,18 @@ router.get("/public_image", (req, res) => {
     });
 });
 
+router.get("/public_image/:tags", (req, res) => {
+  return api
+    .get("/", {
+      params: {
+        format: "json",
+        lang: "en-us",
+        tags: req.params.tags,
+      },
+    })
+    .then((resp) => {
+      res.send(resp.data);
+    });
+});
+
 module.exports = router;
