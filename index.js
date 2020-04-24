@@ -1,9 +1,16 @@
 // npm module loader
-const https = require("https") 
-const dotenv = require("dotenv");
+const express = require("express");
+const app = express();
+const dotEnv = require("dotenv");
+const router = require("./routers");
+const bodyParser = require("body-parser");
 
-// environment configuration and caller
-dotenv.config();
-const { 
-    BASE_URL
-} = process.env
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/", (req, res) => {
+  res.send("Flickr API Gateway");
+});
+
+app.use(router);
+app.listen(8000);
