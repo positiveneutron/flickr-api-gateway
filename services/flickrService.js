@@ -17,7 +17,7 @@ router.get("/public_image", (req, res) => {
       },
     })
     .then((resp) => {
-      res.json(resp.data);
+      res.send(resp.data);
     });
 });
 
