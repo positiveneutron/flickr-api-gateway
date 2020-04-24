@@ -10,9 +10,15 @@ const { BASE_URL } = process.env;
 const api = adapter(BASE_URL);
 
 router.get("/public_image", (req, res) => {
-  return api.get("/").then((resp) => {
-    res.json(resp.data);
-  });
+  return api
+    .get("/", {
+      params: {
+        format: "json",
+      },
+    })
+    .then((resp) => {
+      res.json(resp.data);
+    });
 });
 
 module.exports = router;
