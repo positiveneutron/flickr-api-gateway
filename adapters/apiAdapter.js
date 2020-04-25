@@ -5,4 +5,8 @@ const dotEnv = require("dotenv");
 dotEnv.config();
 const { BASE_URL } = process.env;
 
-module.exports = () => axios.create({ baseURL: BASE_URL });
+module.exports = () =>
+  axios.create({
+    baseURL:
+      BASE_URL || "https://www.flickr.com/services/feeds/photos_public.gne",
+  });

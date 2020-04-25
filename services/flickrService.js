@@ -12,6 +12,7 @@ router.get("/public_image", (req, res) => {
       params: {
         format: "json",
         lang: "en-us",
+        nojsoncallback: 1,
       },
     })
     .then((resp) => {
@@ -25,6 +26,7 @@ router.get("/public_image/:tags", (req, res) => {
       params: {
         format: "json",
         lang: "en-us",
+        nojsoncallback: 1,
         tags: req.params.tags,
       },
     })
